@@ -1,0 +1,27 @@
+import React, {useContext, useState} from 'react';
+
+export const TabsContext = React.createContext({ currentTab: null});
+
+export const withTabs = (Component) => ({ children, ...props }) => {
+    const [currentTab, setCurrentTab] = useState();
+
+    return (
+        <TabsContext.Provider value={{currentTab, setCurrentTab}}>
+            <Component {...props}>
+                {children}
+            </Component>
+        </TabsContext.Provider>
+    );
+};
+
+export const useTabs = () => {
+    const {currentTab, setCurrentTab} = useContext(TabsContext);
+
+    if(!TabsContext) {
+        throw new Error('useStepper should be used inside TabsProvider')
+    }
+
+    return {
+        currentTab, setCurrentTab
+    }
+}
