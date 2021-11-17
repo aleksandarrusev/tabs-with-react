@@ -18,7 +18,7 @@ export const useTabs = () => {
     const {currentTab, setCurrentTab} = useContext(TabsContext);
 
     if(!TabsContext) {
-        throw new Error('useStepper should be used inside TabsProvider')
+        throw new Error('useTabs should be used inside TabsProvider')
     }
 
     return {

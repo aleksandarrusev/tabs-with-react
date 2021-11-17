@@ -16,7 +16,7 @@ export const Tabs = function({ children, tabs, defaultTab, onTabSelect, classNam
         <div className={`tabs ${className}`} {...props} >
             <ul className="tabs-header">
                 {Object.values(tabs).map((tabValue) => (
-                    <li onClick={() => setCurrentTab(tabValue)} className={`${currentTab === tabValue ? 'active' : ''}`} key={tabValue} onClick={() => onTabSelect(tabValue)}> {tabValue} </li>
+                    <li className={`${currentTab === tabValue ? 'active' : ''}`} key={tabValue} onClick={() => onTabSelect(tabValue)}> {tabValue} </li>
                 ))}
             </ul>
             <div className="tabs-body">
