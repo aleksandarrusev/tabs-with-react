@@ -6,10 +6,8 @@ export const Tabs = function({ children, tabs, defaultTab, onTabSelect, classNam
     const { currentTab, setCurrentTab } = useTabs();
 
     useEffect(() => {
-        if(currentTab !== defaultTab) {
-            setCurrentTab(defaultTab)
-        }
-   }, [currentTab, setCurrentTab])
+        setCurrentTab(defaultTab)
+   }, [setCurrentTab, defaultTab])
 
     return (
 
