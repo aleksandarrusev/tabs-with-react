@@ -9,7 +9,7 @@ export const Tabs = function({ children, tabs, defaultTab, onTabSelect, classNam
         if(currentTab !== defaultTab) {
             setCurrentTab(defaultTab)
         }
-   }, [defaultTab])
+   }, [currentTab, setCurrentTab])
 
     return (
 
